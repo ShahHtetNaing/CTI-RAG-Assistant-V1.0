@@ -1,0 +1,42 @@
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+*.key
+secrets*
+*_token*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Model weights, datasets, indexes and runtime caches
+.cache/
+huggingface/
+datasets/
+models/
+chroma/
+chroma_db/
+vectorstore/
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# Runtime outputs and local data
+*.csv
+*.parquet
+*.jsonl
+data/
+outputs/
+logs/
+*.log
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

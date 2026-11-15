@@ -1,0 +1,20 @@
+# Colab-first dependencies. The notebook also installs these in its setup cell.
+accelerate
+bitsandbytes
+chromadb
+datasets
+gradio>=6,<7
+langchain
+langchain-community
+langchain-core
+langchain-huggingface
+langchain-text-splitters
+numpy
+opentelemetry-api>=1.39,<=1.42.1
+opentelemetry-sdk>=1.39,<=1.42.1
+pandas
+rank-bm25
+requests
+sentence-transformers
+transformers
+torch

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#08111f" />
+  <meta name="description" content="Evidence-grounded cyber threat intelligence research and phishing email triage." />
+  <title>CTI Intelligence Workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="config.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#overview" aria-label="CTI Intelligence home">
+        <span class="brand-mark">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2.8 27 7v8.4c0 7.3-4.6 11.8-11 14-6.4-2.2-11-6.7-11-14V7l11-4.2Z"/><path d="m11.2 15.7 3.1 3.1 6.8-7"/></svg>
+        </span>
+        <span class="brand-copy"><strong>CTI<span>INTEL</span></strong><small>THREAT RESEARCH WORKSPACE</small></span>
+      </a>
+
+      <div class="side-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#overview" data-nav="overview"><span class="nav-icon">⌂</span><span>Overview</span></a>
+        <a class="nav-link" href="#workbench" data-nav="research"><span class="nav-icon">⌕</span><span>CTI Research</span><span class="nav-tag">RAG</span></a>
+        <a class="nav-link" href="#workbench" data-nav="email"><span class="nav-icon">✉</span><span>Email Triage</span></a>
+        <a class="nav-link" href="#sources" data-nav="sources"><span class="nav-icon">▤</span><span>Intelligence Sources</span></a>
+      </nav>
+
+      <div class="side-label side-label-spaced">SYSTEM</div>
+      <div class="side-status-card">
+        <div class="status-card-head"><span class="pulse-dot"></span><span>Workspace status</span></div>
+        <strong id="sidebarStatus">Preview environment</strong>
+        <p id="sidebarStatusText">Backend connection not configured</p>
+        <div class="status-line"><span></span><i></i><b></b></div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="security-note"><span class="lock-icon">⌑</span><div><strong>Evidence first</strong><small>Answers stay within approved CTI evidence.</small></div></div>
+        <div class="side-footer"><span>CP5403 · CTI RAG</span><span>v1.0</span></div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="overview">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><b>/</b><strong>Overview</strong></div>
+        <div class="topbar-right">
+          <div class="runtime-pill"><span class="pulse-dot"></span><span id="runtimeLabel">Demo mode</span></div>
+          <div class="top-date" id="todayLabel">11 NOV 2026</div>
+          <div class="avatar">CTI</div>
+        </div>
+      </header>
+
+      <section class="welcome-section">
+        <div class="welcome-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> CYBER THREAT INTELLIGENCE PLATFORM</div>
+          <h1>See the signal.<br /><span>Understand the threat.</span></h1>
+          <p>Investigate cyber threats with evidence-grounded AI. Search across curated intelligence, incident records, vulnerabilities and optional live threat data.</p>
+          <div class="welcome-actions">
+            <a class="primary-button" href="#workbench" id="startResearch"><span>⌕</span> Open research workbench <b>↗</b></a>
+            <a class="quiet-link" href="#sources">Explore data sources <span>→</span></a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Abstract cybersecurity network illustration">
+          <div class="visual-glow"></div>
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+          <div class="core-shield"><svg viewBox="0 0 80 88" aria-hidden="true"><path d="M40 4 70 15v22c0 21-12 36-30 46C22 73 10 58 10 37V15L40 4Z"/><path d="m25 42 10 10 21-23"/></svg></div>
+          <div class="float-chip chip-a"><span class="chip-dot green"></span> SOURCE PROVENANCE <b>VISIBLE</b></div>
+          <div class="float-chip chip-b"><span class="chip-dot cyan"></span> HYBRID RETRIEVAL <b>CHROMA + BM25</b></div>
+          <div class="float-chip chip-c"><span class="mini-spark">⌁</span> THREAT SIGNALS <b>↗</b></div>
+          <div class="visual-caption"><span class="caption-pulse"></span> INTELLIGENCE · ANALYSIS · CONTEXT</div>
+        </div>
+      </section>
+
+      <section class="metrics-grid" aria-label="Project capabilities">
+        <article class="metric-card">
+          <div class="metric-top"><span class="metric-icon icon-green">▤</span><span class="metric-kicker">KNOWLEDGE BASE</span></div>
+          <div class="metric-value">06 <small>collections</small></div>
+          <p>Curated and structured CTI sources</p>
+          <div class="metric-foot"><span class="tiny-bars"><i></i><i></i><i></i><i></i><i></i></span><span>Multi-source retrieval</span></div>
+        </article>
+        <article class="metric-card">
+          <div class="metric-top"><span class="metric-icon icon-blue">⌘</span><span class="metric-kicker">LANGUAGE MODEL</span></div>
+          <div class="metric-value model-value">Gemma 2 <small>2B Instruct</small></div>
+          <p>Quantised 4-bit model for local inference</p>
+          <div class="metric-foot"><span class="mini-check">✓</span><span>NF4 · GPU-ready runtime</span></div>
+        </article>
+        <article class="metric-card">
+          <div class="metric-top"><span class="metric-icon icon-purple">⌕</span><span class="metric-kicker">RETRIEVAL ENGINE</span></div>
+          <div class="metric-value">Hybrid <small>search</small></div>
+          <p>Semantic similarity combined with BM25</p>
+          <div class="metric-foot"><span class="mini-check">✓</span><span>ChromaDB + keyword ranking</span></div>
+        </article>
+        <article class="metric-card metric-live">
+          <div class="metric-top"><span class="metric-icon icon-amber">◉</span><span class="metric-kicker">LIVE INTELLIGENCE</span></div>
+          <div class="metric-value">Optional <small>API feed</small></div>
+          <p>ThreatCluster results kept separate from snapshots</p>
+          <div class="metric-foot"><span class="live-indicator"></span><span id="liveMetricText">Requires API connection</span></div>
+        </article>
+      </section>
+
+      <section class="workbench-section" id="workbench">
+        <div class="section-heading">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span> ANALYST WORKSPACE</div><h2>Intelligence workbench</h2><p>Ask a question or inspect a suspicious email. Every conclusion should be traceable to evidence.</p></div>
+          <div class="workbench-meta"><span class="meta-icon">✦</span> AI-ASSISTED · HUMAN-VERIFIABLE</div>
+        </div>
+
+        <div class="workbench-layout">
+          <section class="query-panel panel-surface">
+            <div class="panel-header">
+              <div class="mode-tabs" role="tablist" aria-label="Analysis mode">
+                <button class="mode-tab selected" id="researchTab" role="tab" aria-selected="true"><span>⌕</span> CTI Research</button>
+                <button class="mode-tab" id="emailTab" role="tab" aria-selected="false"><span>✉</span> Email Triage</button>
+              </div>
+              <span class="panel-step">01 <i>/</i> INPUT</span>
+            </div>
+            <div class="query-body">
+              <div class="input-heading"><label for="queryInput" id="queryLabel">What would you like to investigate?</label><span class="input-mode-badge" id="inputModeBadge">RESEARCH MODE</span></div>
+              <p class="input-help" id="queryHelp">Ask about threat actors, malware, vulnerabilities, incidents, targets, impact or documented mitigations.</p>
+              <textarea id="queryInput" rows="5" spellcheck="false" placeholder="Example: Give two documented healthcare ransomware incident cases. Include reported impact and response where available..."></textarea>
+              <div class="input-bottom"><span id="charCount">0 characters</span><button class="text-button" id="clearInput">Clear input <span>×</span></button></div>
+
+              <div class="suggestion-area" id="researchExamples">
+                <span class="suggestion-title">TRY A QUESTION</span>
+                <div class="suggestion-chips">
+                  <button class="suggestion-chip" data-example="What do historical reports state about MiniDuke PDF zero-day attacks and its micro backdoor?">MiniDuke overview <span>↗</span></button>
+                  <button class="suggestion-chip" data-example="What is a wiper attack and what mitigations are documented in the selected datasets?">Wiper attacks <span>↗</span></button>
+                  <button class="suggestion-chip" data-example="Give two documented healthcare ransomware incident cases. Include actual losses only when reported.">Healthcare incidents <span>↗</span></button>
+                </div>
+              </div>
+              <div class="suggestion-area hidden" id="emailExamples">
+                <span class="suggestion-title">TRY EMAIL TRIAGE</span>
+                <div class="suggestion-chips"><button class="suggestion-chip" id="loadEmailExample">Load sample phishing email <span>↗</span></button></div>
+              </div>
+
+              <div class="query-options">
+                <label class="toggle-row" for="liveToggle"><span class="toggle-copy"><strong>Include live ThreatCluster intelligence</strong><small>Searches one extracted keyword only. Requires API key.</small></span><input id="liveToggle" type="checkbox" checked /><span class="toggle-ui"></span></label>
+                <div class="option-divider"></div>
+                <div class="privacy-note" id="privacyNote"><span>ⓘ</span> Live search sends a short query keyword, not your complete prompt.</div>
+              </div>
+              <button class="analyse-button" id="analyseButton"><span class="analyse-symbol">⌕</span><span id="analyseButtonText">Analyse intelligence query</span><b>→</b></button>
+              <div class="secure-footnote"><span>♢</span> Grounded responses only · Unavailable facts are identified, not invented.</div>
+            </div>
+          </section>
+
+          <aside class="workflow-column">
+            <section class="workflow-card panel-surface">
+              <div class="small-card-heading"><div><span class="micro-eyebrow">UNDER THE HOOD</span><h3>How analysis works</h3></div><span class="spark-icon">✳</span></div>
+              <div class="workflow-steps">
+                <div class="workflow-step"><span class="step-number">01</span><div><strong>Understand the request</strong><small>Intent and query classification</small></div><span class="step-state">INPUT</span></div>
+                <div class="step-connector"></div>
+                <div class="workflow-step"><span class="step-number">02</span><div><strong>Retrieve relevant evidence</strong><small>ChromaDB semantic + BM25 search</small></div><span class="step-state">RAG</span></div>
+                <div class="step-connector"></div>
+                <div class="workflow-step"><span class="step-number">03</span><div><strong>Check structured records</strong><small>CVE and victim listings when relevant</small></div><span class="step-state">DATA</span></div>
+                <div class="step-connector"></div>
+                <div class="workflow-step"><span class="step-number">04</span><div><strong>Generate cited findings</strong><small>Gemma 2 · source-bound response</small></div><span class="step-state">AI</span></div>
+              </div>
+            </section>
+            <section class="guardrail-card">
+              <div class="guardrail-icon">◈</div><div><strong>Built for evidence, not guesses.</strong><p>AI responses are constrained to retrieved records and separately labelled live results. A missing fact stays missing.</p><a href="#sources">View evidence policy <span>→</span></a></div>
+            </section>
+          </aside>
+        </div>
+
+        <section class="results-panel panel-surface" id="resultsPanel" aria-live="polite">
+          <div class="results-header"><div><div class="micro-eyebrow">ANALYSIS OUTPUT</div><h3 id="resultsTitle">Your findings will appear here</h3></div><div class="result-status" id="resultStatus"><span class="status-ring"></span> AWAITING QUERY</div></div>
+          <div class="results-empty" id="resultsEmpty"><div class="empty-graphic"><span>⌁</span><i></i><b></b></div><strong>Ready when you are</strong><p>Submit a CTI question or email to view the analysis, source citations and retrieval details.</p></div>
+          <div class="results-content hidden" id="resultsContent">
+            <div class="answer-block"><div class="answer-label"><span class="answer-spark">✳</span> GENERATED ANALYSIS</div><div class="answer-text" id="answerText"></div></div>
+            <div class="result-details"><div class="detail-cell"><span>RETRIEVAL</span><strong id="retrievalTime">—</strong></div><div class="detail-cell"><span>GENERATION</span><strong id="generationTime">—</strong></div><div class="detail-cell"><span>TOTAL TIME</span><strong id="totalTime">—</strong></div><div class="detail-cell"><span>EVIDENCE ITEMS</span><strong id="evidenceCount">—</strong></div></div>
+            <div class="sources-result"><div class="sources-result-head"><div><span class="micro-eyebrow">TRACEABILITY</span><h4>Retrieved sources</h4></div><span class="source-count" id="sourceCount">0 SOURCES</span></div><div class="source-list" id="sourceList"></div><div class="live-status-text" id="liveStatusText"></div></div>
+          </div>
+        </section>
+      </section>
+
+      <section class="sources-section" id="sources">
+        <div class="section-heading compact-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> KNOWLEDGE LAYER</div><h2>Intelligence sources</h2><p>Separate source channels preserve the provenance and freshness limits of each record collection.</p></div><a class="quiet-link" href="https://huggingface.co/datasets" target="_blank" rel="noopener">Dataset hub <span>↗</span></a></div>
+        <div class="source-grid">
+          <article class="source-card"><div class="source-card-top"><span class="source-symbol green-symbol">▤</span><span class="source-kind snapshot-kind">SNAPSHOT</span></div><h3>Incident clusters</h3><p>Incident summaries, entities and publisher-generated incident clusters.</p><div class="source-foot"><span>ThreatCluster</span><a href="https://huggingface.co/datasets/threatcluster/threat-incident-clusters" target="_blank" rel="noopener">Dataset <b>↗</b></a></div></article>
+          <article class="source-card"><div class="source-card-top"><span class="source-symbol blue-symbol">⌘</span><span class="source-kind snapshot-kind">SNAPSHOT</span></div><h3>CVE exploitation signals</h3><p>Structured vulnerability and exploitation signal records.</p><div class="source-foot"><span>ThreatCluster</span><a href="https://huggingface.co/datasets/threatcluster/cve-exploitation-signals" target="_blank" rel="noopener">Dataset <b>↗</b></a></div></article>
+          <article class="source-card"><div class="source-card-top"><span class="source-symbol amber-symbol">◈</span><span class="source-kind caveat-kind">CLAIM-BASED</span></div><h3>Ransomware victim listings</h3><p>Leak-site victim claims. Listings are not independent confirmation of a breach.</p><div class="source-foot"><span>ThreatCluster</span><a href="https://huggingface.co/datasets/threatcluster/ransomware-leak-site-victims" target="_blank" rel="noopener">Dataset <b>↗</b></a></div></article>
+          <article class="source-card"><div class="source-card-top"><span class="source-symbol purple-symbol">▧</span><span class="source-kind curated-kind">CURATED</span></div><h3>Threat intelligence Q&amp;A</h3><p>Curated question-and-answer records used as secondary CTI knowledge.</p><div class="source-foot"><span>reloading0101</span><a href="https://huggingface.co/datasets/reloading0101/threat-intelligence-dataset" target="_blank" rel="noopener">Dataset <b>↗</b></a></div></article>
+          <article class="source-card"><div class="source-card-top"><span class="source-symbol cyan-symbol">▤</span><span class="source-kind archive-kind">ARCHIVE</span></div><h3>Historical CTI reports</h3><p>Historical report archive; it is not a live intelligence feed.</p><div class="source-foot"><span>guychuk</span><a href="https://huggingface.co/datasets/guychuk/cyber-threat-intelligence-reports" target="_blank" rel="noopener">Dataset <b>↗</b></a></div></article>
+          <article class="source-card"><div class="source-card-top"><span class="source-symbol rose-symbol">⌁</span><span class="source-kind feed-kind">DOMAIN FEED</span></div><h3>PhishDestroy destroylist</h3><p>Phishing and scam domain feed. A non-match does not prove that a domain is safe.</p><div class="source-foot"><span>PhishDestroy</span><a href="https://huggingface.co/datasets/phishdestroy/destroylist" target="_blank" rel="noopener">Dataset <b>↗</b></a></div></article>
+          <article class="source-card live-source-card"><div class="source-card-top"><span class="source-symbol live-symbol">◉</span><span class="source-kind live-kind">LIVE API · OPTIONAL</span></div><h3>ThreatCluster live search</h3><p>Request-time search results are shown separately from static dataset snapshots.</p><div class="source-foot"><span>API key required</span><a href="https://threatcluster.io/about/api-reference" target="_blank" rel="noopener">API docs <b>↗</b></a></div></article>
+        </div>
+        <div class="freshness-note"><span>ⓘ</span><p><strong>Freshness matters.</strong> Incident, CVE and ransomware collections are periodic snapshots (the notebook catalogue records 6 September 2026 for these snapshots). Historical reports and curated Q&amp;A are archives. PhishDestroy publishes an updated feed, while ThreatCluster live search is queried at request time when configured.</p></div>
+      </section>
+
+      <footer class="page-footer"><div class="footer-brand"><span class="footer-mark">⬡</span><strong>CTI INTEL</strong><span>Evidence-grounded cyber threat intelligence</span></div><div class="footer-right"><span>CP5403 · RAG PROJECT</span><span class="footer-divider"></span><span>BUILT FOR ANALYSIS. DESIGNED FOR TRACEABILITY.</span></div></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
